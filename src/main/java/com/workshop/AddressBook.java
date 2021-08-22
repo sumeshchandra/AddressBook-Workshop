@@ -11,6 +11,7 @@ public class AddressBook {
     ArrayList<Contact> contactlist = new ArrayList<>();
     private Map<String, ArrayList<Contact>> addressbook = new HashMap<>();
     private Object contact;
+    private Object bookName;
 
     public void addNewContact() {
         Contact contact = new Contact();
@@ -124,17 +125,24 @@ public class AddressBook {
         }
     }
 
-    public void viewPersonInACity (String city)
-    {
-        for(String bookName : addressbook.keySet())
-        {
+    public void searchaPersoninaState(String state) {
+        System.out.println("following are the persons who belongs to :" + state);
+        for (String bookName : addressbook.keySet()) {
+            addressbook.get(bookName);
+            contactlist.stream().filter(value -> value.getState().equals(state)).map(Contact::getFirstname).forEach(System.out::println);
+        }
+    }
+
+    public void viewPersonInACity(String city) {
+        for (String bookName : addressbook.keySet()) {
             int countofPerson = 0;
             addressbook.get(bookName);
             contactlist.stream().filter(value -> value.getCity().equals(city)).map(Contact::getFirstname).forEach(System.out::println);
             countofPerson++;
-            System.out.println("total no.of.persons:"+countofPerson);
+            System.out.println("total no.of.persons:" + countofPerson);
         }
     }
+
 
     public void displayList() {
         for (Contact iterator : contactlist) System.out.println(iterator);

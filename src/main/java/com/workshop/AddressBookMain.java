@@ -33,9 +33,21 @@ public class AddressBookMain {
                     String searchCity = scanner.next();
                     service.searchaPersoninaCity(searchCity);
                 case 5:
+                    System.out.println("Enter the state to be searched: ");
+                    String searchState = scanner.next();
+                    service.searchaPersoninaState(searchState);
+                case 6:
+                    System.out.println("Enter the city of a person to be viewed:");
+                    String viewCity =  scanner.next();
+                    service.viewPersonInACity(viewCity);
+                case 7:
+                    System.out.println("Enter the State of a person to be viewed:");
+                    String viewState =  scanner.next();
+                    service.viewPersonInACity(viewState);
+                case 8:
                     service.displayList();
                     break;
-                case 6:
+                case 9:
                     isExit = true;
                     break;
                 default:
