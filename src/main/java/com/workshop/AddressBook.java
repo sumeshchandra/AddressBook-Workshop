@@ -1,9 +1,7 @@
 package com.workshop;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class AddressBook {
 
@@ -141,6 +139,13 @@ public class AddressBook {
             countofPerson++;
             System.out.println("total no.of.persons:" + countofPerson);
         }
+    }
+
+    public void sortByName() {
+        addressbook.keySet().forEach((String name) -> {
+            addressbook.get(name).stream().sorted(Comparator.comparing(Contact::getFirstname))
+                    .collect(Collectors.toList()).forEach(person -> System.out.println(person.toString()));
+        });
     }
 
 
