@@ -3,77 +3,97 @@ package com.workshop;
 
 public class Contact {
 
-    public String firstName;
-    public String lastName;
-    public String address;
-    public String city;
-    public String state;
-    public String zip;
-    public String PhoneNumber;
-    public String email;
+    private String firstname;
+    private String lastname;
+    private String address;
+    private String city;
+    private String state;
+    private String phonenumber;
+    private String emailid;
+    private String zipcode;
 
+    public void Contact(String firstname,String lastname, String address, String city, String state, String phonenumber, String emailid, String zipcode)
+    {
 
-    public String getFirstName() {
-        return firstName;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.phonenumber = phonenumber;
+        this.emailid = emailid;
+        this.zipcode = zipcode;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public String getFirstname()
+    {
+        return firstname;
     }
-
-    public String getLastName() {
-        return lastName;
+    public void setFirstname(String firstname)
+    {
+        this.firstname = firstname;
     }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public String getLastname()
+    {
+        return lastname;
     }
-
-    public String getAddress() {
+    public void setLastname(String lastname)
+    {
+        this.lastname = lastname;
+    }
+    public String getAddress()
+    {
         return address;
     }
-
-    public void setAddress(String address) {
+    public void setAddress(String address)
+    {
         this.address = address;
     }
-
-    public String getCity() {
+    public String getCity()
+    {
         return city;
     }
-
-    public void setCity(String city) {
+    public void setCity(String city)
+    {
         this.city = city;
     }
-
-    public String getState() {
+    public String getState()
+    {
         return state;
     }
-
-    public void setState(String state) {
+    public void setState(String state)
+    {
         this.state = state;
     }
-
-    public String getZip() {
-        return zip;
+    public String getPhonenumber()
+    {
+        return phonenumber;
+    }
+    public void setPhonenumber(String phonenumber)
+    {
+        this.phonenumber = phonenumber;
+    }
+    public String getEmailid()
+    {
+        return emailid;
+    }
+    public void setEmailid(String emailid)
+    {
+        this.emailid = emailid;
+    }
+    public String getZipcode()
+    {
+        return zipcode;
+    }
+    public void setZipcode(String zipcode)
+    {
+        this.zipcode = zipcode;
     }
 
-    public void setZip(String zip) {
-        this.zip = zip;
-    }
-
-    public String getPhoneNumber() {
-        return PhoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.PhoneNumber = phoneNumber;
-    }
-
-    public String getEmailId() {
-        return email;
-    }
-
-    public void setEmail(String email){
-        this.email = email;
+    @Override
+    public String toString()
+    {
+        return "Contact[ FirstName=" + firstname + ",LastName=" + lastname + ",Address=" + address + ",City=" + city + ",State=" + state +
+                ",PhoneNumber=" + phonenumber + ",Emailid=" + emailid + ",Zipcode=" + zipcode + "]";
     }
 }
