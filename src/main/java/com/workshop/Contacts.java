@@ -2,21 +2,32 @@ package com.workshop;
 
 import java.util.regex.Pattern;
 
-public class Contact {
+public class Contacts {
 
     public String firstName;
     public String lastName;
     public String address;
     public String city;
     public String state;
-    public String zip;
-    public String phone;
-    public String email;
+    public long zip;
+    public String PhoneNumber;
+    public String emailId;
+
+    public Contacts(String firstName, String lastName, String address, String state, String city, int zipCode, String number, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+        this.PhoneNumber = PhoneNumber;
+        this.emailId = emailId;
+    }
 
     @Override
     public String toString() {
         return "Contact [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", city=" + city
-                + ", state=" + state + ", zip=" + zip + ", phone=" + phone + ", email=" + email + "]";
+                + ", state=" + state + ", zip=" + zip + ", phone=" + PhoneNumber + ", email=" + emailId + "]";
     }
 
     public String getFirstName() {
@@ -26,15 +37,16 @@ public class Contact {
     /**
      * Checks regex pattern for First name
      * If matches sets the first name.
+     *
      * @param firstName
-     * @throws
+     * @throws CustomException
      */
-    public void setFirstName(String firstName) throws CustomException  {
+    public void setFirstName(String firstName) throws CustomException {
         boolean check = Pattern.matches("[A-Z]+[a-z]{2,}", firstName);
-        if (check){
-            System.out.println("valid");
-        } else{
-            System.out.println("Invalid");
+        if (check) {
+            this.firstName = firstName;
+        } else {
+            throw new CustomException(CustomException.Exception.FIRST_NAME_INCORRECT);
         }
     }
 
@@ -42,9 +54,16 @@ public class Contact {
         return lastName;
     }
 
+    /**
+     * Checks regex pattern for First name
+     * If matches sets the first name.
+     *
+     * @param lastName
+     * @throws CustomException
+     */
     public void setLastName(String lastName) throws CustomException {
         boolean check = Pattern.matches("[A-Z]+[a-z]{2,}", lastName);
-        if(check)
+        if (check)
             this.lastName = lastName;
         else
             throw new CustomException(CustomException.Exception.LAST_NAME_INCORRECT);
@@ -74,27 +93,27 @@ public class Contact {
         this.state = state;
     }
 
-    public String getZip() {
+    public long getZip() {
         return zip;
     }
 
-    public void setZip(String zip) {
+    public void setZip(long zip) {
         this.zip = zip;
     }
 
     public String getPhone() {
-        return phone;
+        return PhoneNumber;
     }
 
     public void setPhone(String phone) {
-        this.phone = phone;
+        this.PhoneNumber = PhoneNumber;
     }
 
     public String getEmail() {
-        return email;
+        return emailId;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.emailId = emailId;
     }
 }
