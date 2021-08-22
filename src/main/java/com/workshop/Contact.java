@@ -66,7 +66,7 @@ public class Contact {
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        PhoneNumber = phoneNumber;
+        this.PhoneNumber = phoneNumber;
     }
 
     public String getEmailId() {
@@ -74,6 +74,6 @@ public class Contact {
     }
 
     public void setEmail(String email){
-        email = email;
+        this.email = email;
     }
 }
